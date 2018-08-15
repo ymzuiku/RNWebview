@@ -113,6 +113,9 @@ export default class FullWeb extends Component {
     this.web.postMessage(JSON.stringify({ status: status, from: 'native' }));
   };
   onNavigationStateChange = () => {};
+  postMessage = (obj)=>{
+    this.web.postMessage(JSON.stringify({ ...obj, from: 'native' });
+  }
   onMessage = event => {
     let msg = {};
     try {
